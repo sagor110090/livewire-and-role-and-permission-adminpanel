@@ -1,0 +1,28 @@
+.nav-scroller {
+    background: #003366 !important;
+}
+
+.bg-background {
+    background: #003366 !important;
+}
+
+.turbolinks-progress-bar {
+    height: 5px;
+    background-color: green;
+}
+
+.modal-backdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.modal-backdrop.in {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.fade {
+    /* background: #53535991; */
+    backdrop-filter: blur(1px);
+    background-color: #01223770;
+}

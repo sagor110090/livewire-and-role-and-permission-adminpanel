@@ -1,0 +1,46 @@
+
+
+
+
+    client
+        -name
+        -address
+        -phone_number
+        -whatsapp
+        -facebook
+
+
+    1.project
+        -name
+        -requirements
+        -price
+        -time
+        -delivery_date
+        -client_id
+        -order_id
+        -status
+
+    2.task
+        -name
+        -status
+        -time
+        -project_id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///
