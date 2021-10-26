@@ -19,11 +19,25 @@ class UserTableSeeder extends Seeder
     {
         $user = User::create([
             'name' => 'Mehedi Hasan Sagor',
-            'email' => 'developer@sagor.com',
+            'email' => 'mehedihasansagor.cse@gmail.com',
             'password' => Hash::make('12345678')
         ]);
 
         $role = Role::find(1);
+
+        $permissions = Permission::pluck('id', 'id')->all();
+
+        $role->syncPermissions($permissions);
+
+        $user->assignRole([$role->id]);
+
+        $user = User::create([
+            'name' => 'developer',
+            'email' => 'developer@sagor.com',
+            'password' => Hash::make('12345678')
+        ]);
+
+        $role = Role::find(2);
 
         $permissions = Permission::pluck('id', 'id')->all();
 

@@ -21,17 +21,12 @@
             </li>
 
             <!--Nav Bar Hooks - Do not delete!!-->
-						@can('post-create')<li class="nav-item">
+						@can('post-list')<li class="nav-item">
                             <a href="{{ url('/admin/posts') }}" class="nav-link {{request()->is('admin/posts') ? 'active' : ''}}"><i data-feather="sidebar" class="nav-icon icon-xs me-2"></i> Posts</a>
                         </li>@endcan
+						 
 
-            @can('post-create')
-                <li class="nav-item">
-                    <a href="{{ url('/admin/posts') }}"
-                        class="nav-link {{ request()->is('admin/posts') ? 'active' : '' }}"><i data-feather="sidebar"
-                            class="nav-icon icon-xs me-2"></i> Posts</a>
-                </li>
-            @endcan
+
 
 
 
