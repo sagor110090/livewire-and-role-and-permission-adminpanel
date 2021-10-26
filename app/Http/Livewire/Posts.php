@@ -151,6 +151,8 @@ class Posts extends Component
 
     public function bulkDelete()
     {
+        $this->authorize('post-delete');
+
         Post::whereKey($this->checked)->delete();
         $this->checked = [];
         $this->alert( 'success', 'Deleted successfully.');

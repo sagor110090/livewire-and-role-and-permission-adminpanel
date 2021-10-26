@@ -3273,12 +3273,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sagor110090/livewire-crud.git",
-                "reference": "43bcb9aac3a322c6538eea8b78d6a5873d9ff09a"
+                "reference": "bce2fb90c12f2463735558d51c474e31f2b31a60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sagor110090/livewire-crud/zipball/43bcb9aac3a322c6538eea8b78d6a5873d9ff09a",
-                "reference": "43bcb9aac3a322c6538eea8b78d6a5873d9ff09a",
+                "url": "https://api.github.com/repos/sagor110090/livewire-crud/zipball/bce2fb90c12f2463735558d51c474e31f2b31a60",
+                "reference": "bce2fb90c12f2463735558d51c474e31f2b31a60",
                 "shasum": ""
             },
             "require": {
@@ -3325,7 +3325,7 @@
                 "issues": "https://github.com/sagor110090/livewire-crud/issues",
                 "source": "https://github.com/sagor110090/livewire-crud/tree/main"
             },
-            "time": "2021-10-25T21:06:05+00:00"
+            "time": "2021-10-26T14:19:26+00:00"
         },
         {
             "name": "spatie/laravel-permission",

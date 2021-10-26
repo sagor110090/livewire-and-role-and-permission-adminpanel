@@ -8,7 +8,7 @@
                 </div>
                 <div>
                 @can('post-create')
-                    <button type="button" href="#" data-bs-toggle="modal" wire:click.prevent="resetInput()"  data-bs-target="#staticBackdrop"
+                    <button type="button" href="#" data-bs-toggle="modal" wire:click.prevent="resetInput()"  data-bs-target="#postCreateModal"
                         class="btn btn-white"><i class="fa fa-plus"></i> Create New Posts</button>
                 @endcan
                 </div>
@@ -23,9 +23,13 @@
                     @include('livewire.posts.create')
                     @include('livewire.posts.update')
                     @include('livewire.posts.view')
+
+                    @can('post-delete')
                     <button class="btn btn-danger btn-sm mb-2" {{ count($checked) == 0 ? 'disabled' : '' }}
                         wire:click='bulkDeleteTriggerConfirm()'> <i class="fa fa-trash" aria-hidden="true"></i> Bulk delete({{ count($checked) }})
                     </button>
+                    @endcan
+
 				<div class="table-responsive">
                  <div class="mb-4">
                             <input wire:model='keyWord' type="text" class="form-control" name="search" id="search"
@@ -34,7 +38,11 @@
 					<table class="table table-bordered table-sm">
 						<thead class="thead">
 							<tr>
+                            @can('post-delete')
+
                             <td><input type="checkbox" value="1" wire:model="checkedAll"></td>
+                            
+                            @endcan
 								<td>#</td> 
 								<th>Title</th>
 								<th>Body</th>
@@ -44,19 +52,22 @@
 						<tbody>
 							@foreach($posts as $row)
 							<tr>
+                            @can('post-delete')
+
                             <td><input type="checkbox" value="{{ $row->id }}" wire:model="checked">
                                         </td>
+                                @endcan
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->title }}</td>
 								<td>{{ $row->body }}</td>
 								<td width="200">
 
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropShow" class="btn btn-warning btn-sm"wire:click="show({{ $row->id }})"><i
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#postShowModal" class="btn btn-warning btn-sm"wire:click="show({{ $row->id }})"><i
                                             class="fa fa-eye"></i></button>
 
-                                        @can('post-create')
+                                        @can('post-edit')
 
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdropUpdate" class="btn btn-success btn-sm"wire:click="edit({{ $row->id }})"><i
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#postUpdateModal" class="btn btn-success btn-sm"wire:click="edit({{ $row->id }})"><i
                                             class="fa fa-edit"></i></button>
 
                                         @endcan

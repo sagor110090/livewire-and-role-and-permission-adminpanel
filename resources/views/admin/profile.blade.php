@@ -18,22 +18,22 @@
             <div class="col-md-9">
                 <div class=" card p-5">
                     <div class="form-input"> <i class="fa fa-user"></i>
-                        <input type="text" required class="form-control" name="name" placeholder="Name"
+                        <input type="text" required class="form-control form-control-profile" name="name" placeholder="Name"
                             value="{{ auth()->user()->name }}">
                     </div>
 
                     <div class="form-input"> <i class="fa fa-envelope"></i>
-                        <input type="text" required class="form-control" name="email" placeholder="Email address"
+                        <input type="text" required class="form-control form-control-profile" name="email" placeholder="Email address"
                             value="{{ auth()->user()->email }}">
                     </div>
 
 
                     <div class="form-input"> <i class="fa fa-lock"></i>
-                        <input type="password"  class="form-control" name="password" placeholder="Password">
+                        <input type="password"  class="form-control form-control-profile" name="password" placeholder="Password">
                     </div>
 
                     <div class="form-input"> <i class="fa fa-lock"></i>
-                        <input type="password"  class="form-control" name="password_confirmation"
+                        <input type="password"  class="form-control form-control-profile" name="password_confirmation"
                             placeholder="Password confirmation">
                     </div>
 
@@ -76,19 +76,14 @@
             left: 10px
         }
 
-        .form-control {
+        .form-control-profile {
             height: 50px;
             /* background-color: #1c1e21; */
             text-indent: 24px;
             font-size: 15px
         }
 
-        .form-control:focus {
-            /* background-color: #25272a; */
-            box-shadow: none;
-            color: #4f63e7;
-            border-color: #4f63e7
-        }
+
 
 
 
