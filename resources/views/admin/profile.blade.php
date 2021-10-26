@@ -12,7 +12,7 @@
                     <img src=" {{ auth()->user()->image ? Storage::url(auth()->user()->image) : 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png' }} " class="avatar-profile img-circle img-thumbnail"
                         alt="avatar">
                     <h6>Upload a different photo...</h6>
-                    <input type="file" class="text-center center-block file-upload" name="image">
+                    <input type="file" class="form-control text-center center-block file-upload" name="image">
                 </div>
             </div>
             <div class="col-md-9">
@@ -100,7 +100,7 @@
                     var reader = new FileReader();
 
                     reader.onload = function(e) {
-                        $('.avatar').attr('src', e.target.result);
+                        $('.avatar-profile').attr('src', e.target.result);
                     }
 
                     reader.readAsDataURL(input.files[0]);
