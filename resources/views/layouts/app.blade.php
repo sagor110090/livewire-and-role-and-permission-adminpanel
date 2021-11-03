@@ -4,38 +4,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- <meta name="turbolinks-visit-control" content="reload"> --}}
     <meta name="turbolinks-cache-control" content="no-cache">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>@hasSection('title') @yield('title') | @endif {{ websiteName() }}
-</title>
-<!-- Favicon -->
-<link rel="shortcut icon" href="{{ Storage::url(websiteFavicon()) }}" />
-@include('layouts.parts.style')
-<script src="{{ asset('js/app.js') }}"></script>
-</head>
+    <title>@hasSection('title') @yield('title') | @endif {{ websiteName() }}
+    </title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ Storage::url(websiteFavicon()) }}" />
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @livewireStyles
+    @stack('css')
+    <script src="{{ asset('js/app.js') }}"></script>
+
 
 <body>
 
-<div id="db-wrapper">
-    @if (!request()->is('admin*'))
+    <div id="db-wrapper">
+        @if (request()->is('login'))
         @yield('content')
-    @else
+        @else
         @include('layouts.parts.sidebar')
         <div id="page-content">
             @include('layouts.parts.nav')
             <!-- Container fluid -->
-            <div class="bg-background pt-10 pb-21"></div>
+            <div class="bg-primary pt-10 pb-21"></div>
             <div class="container-fluid mt-n22 px-6">
                 <div class="row">
                     @yield('content')
                 </div>
             </div>
         </div>
-    @endif
-</div>
-@include('layouts.parts.script')
+        @endif
+    </div>
+    @include('layouts.parts.script')
+    @env('local')
+    <script src="http://localhost:35729/livereload.js"></script>
+    @endenv
+
 </body>
 
 </html>

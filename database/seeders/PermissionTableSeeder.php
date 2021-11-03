@@ -26,12 +26,20 @@ class PermissionTableSeeder extends Seeder
             'permission-list',
             'permission-create',
             'permission-edit',
-            'permission-delete', 
+            'permission-delete',
             'siteSetting-edit',
             'post-list',
             'post-create',
             'post-edit',
             'post-delete',
+
+
+
+            'department-list',
+            'department-create',
+            'department-edit',
+            'department-delete', 
+
 
         ];
 

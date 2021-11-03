@@ -18,7 +18,7 @@
             </div>
             <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" wire:click.prevent="update()" data-bs-dismiss="modal" class="btn bg-background close-modal text-white">Update</button>
+                <button type="button" wire:click.prevent="update()" data-bs-dismiss="modal" class="btn bg-primary close-modal text-white">Update</button>
             </div>
         </div>
     </div>

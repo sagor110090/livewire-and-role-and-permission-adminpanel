@@ -4,7 +4,7 @@
         <div>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="mb-2 mb-lg-0">
-                    <h3 class="mb-0 fw-bold text-white">Update Site Setting</h3>
+                    <h3 class="mb-0 fw-bold text-white">{{_('Update Site Setting')}}</h3>
                 </div>
                 <div>
                 </div>
@@ -20,26 +20,26 @@
                         <div class="form-group">
                             <label for="website_name"></label>
                             <input wire:model="website_name" type="text" class="form-control" id="website_name"
-                                placeholder="Website Name">@error('website_name') <span
-                                class="error text-danger">{{ $message }}</span> @enderror
+                                placeholder="{{__('Website Name')}}">
+                            @error('website_name') <span class="error text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group mt-2">
-                            <label for="website_logo">Website logo</label>
+                            <label for="website_logo">{{__('Website logo')}}</label>
                             <input wire:model="website_logo" type="file" class="form-control" id="website_logo"
-                                placeholder="Website Logo">@error('website_logo') <span
-                                class="error text-danger">{{ $message }}</span> @enderror
+                                placeholder="Website Logo">
+                            @error('website_logo') <span class="error text-danger">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group mt-2">
-                            <label for="website_favicon">Website favicon</label>
-                            <input wire:model="website_favicon" type="file" class="form-control" id="website_favicon" >@error('website_favicon') <span
-                                class="error text-danger">{{ $message }}</span> @enderror
+                            <label for="website_favicon">{{__('Website favicon')}}</label>
+                            <input wire:model="website_favicon" type="file" class="form-control" id="website_favicon">
+                            @error('website_favicon') <span class="error text-danger">{{ $message }}</span> @enderror
                         </div>
 
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" wire:click.prevent="update()" data-bs-dismiss="modal"
-                        class="btn bg-background close-modal text-white">Update</button>
+                        class="btn bg-primary close-modal text-white">{{__('Update')}}</button>
                 </div>
             </div>
 

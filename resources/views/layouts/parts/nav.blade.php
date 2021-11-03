@@ -1,7 +1,7 @@
 <div class="header @@classList">
     <!-- navbar -->
     <nav class="navbar-classic navbar navbar-expand-lg">
-        <a id="nav-toggle" href="#"><i data-feather="menu" class="nav-icon me-2 icon-xs"></i></a>
+        <a id="nav-toggle" href="#"><i class="nav-icon me-2 icon-xs fa fa-list-ul"></i></a>
 
         <!--Navbar nav -->
         <ul class="navbar-nav navbar-right-wrap ms-auto d-flex nav-top-wrap">
@@ -9,7 +9,7 @@
                 <a class="btn btn-light btn-icon rounded-circle indicator indicator-primary text-muted" href="#"
                     role="button" id="dropdownNotification" data-bs-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
-                    <i class="icon-xs" data-feather="bell"></i>
+                    <i class="icon-xs fa fa-bell"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end" aria-labelledby="dropdownNotification">
                     <div>
@@ -17,7 +17,7 @@
                             <p class="mb-0 text-dark fw-medium fs-4">Notifications</p>
                             <a href="#" class="text-muted">
                                 <span>
-                                    <i class="me-1 icon-xxs" data-feather="settings"></i>
+                                    <i class="me-1 icon-xxs fa fa-cog"></i>
                                 </span>
                             </a>
                         </div>
@@ -107,9 +107,9 @@
                             <h5 class="mb-1"> {{ auth()->user()->name }}</h5>
                             <span class="text-inherit fs-6">
                                 @if (!empty(auth()->user()->getRoleNames()))
-                                    @foreach (auth()->user()->getRoleNames() as $val)
-                                        <label class="badge bg-dark">{{ Str::ucfirst($val) }}</label>
-                                    @endforeach
+                                @foreach (auth()->user()->getRoleNames() as $val)
+                                <label class="badge bg-dark">{{ Str::ucfirst($val) }}</label>
+                                @endforeach
                                 @endif
                             </span>
                         </div>
@@ -120,20 +120,19 @@
 
                         <li>
                             <a class="dropdown-item" href="{{ url('/admin/profile') }}">
-                                <i class="me-2 icon-xxs dropdown-item-icon" data-feather="user"></i>Edit
+                                <i class="me-2 icon-xxs dropdown-item-icon far fa-user"></i>Edit
                                 Profile
                             </a>
                         </li>
 
                         <li>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                class="d-none">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                                <i class="me-2 icon-xxs dropdown-item-icon" data-feather="power"></i>Sign
+                                <i class="me-2 icon-xxs dropdown-item-icon fa fa-sign-out-alt"></i>Sign
                                 Out
                             </a>
                         </li>

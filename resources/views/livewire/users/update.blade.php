@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div wire:ignore.self class="modal fade" id="staticBackdropUpdate" data-bs-backdrop="static" data-bs-keyboard="false"
     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog " role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
@@ -44,7 +44,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="button" wire:click.prevent="update()" data-bs-dismiss="modal"
-                    class="btn bg-background close-modal text-white">Update</button>
+                    class="btn bg-primary close-modal text-white">Update</button>
             </div>
         </div>
     </div>

@@ -41,11 +41,11 @@ class BuildWebsite extends Command
 
         $str_arr = explode (",", $tableName);
 
-        $this->warn('Creating: <info>Livewire Component...</info>');
-        for ($i = 0; $i < sizeof($str_arr); $i++) {
-            \Artisan::call('crud:generate '.$str_arr[$i]);
+        // $this->warn('Creating: <info>Livewire Component...</info>');
+        \Artisan::call('crud:generate '.$str_arr[$i]);
+        // for ($i = 0; $i < sizeof($str_arr); $i++) {
 
-            $this->warn('Created: <info>'.$str_arr[$i].'</info>');
-        }
+        //     $this->warn('Created: <info>'.$str_arr[$i].'</info>');
+        // }
     }
 }
