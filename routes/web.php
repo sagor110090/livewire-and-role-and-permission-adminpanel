@@ -11,14 +11,13 @@ Auth::routes([
     'verify' => false, // Email Verification Routes...
 ]);
 
- 
+
 
 Route::get('/', [AdminController::class, 'index']);
 Route::get('/dashboard', [AdminController::class, 'index'])->name('home');
 Route::view('/admin/profile', 'admin.profile');
 Route::post('/admin/profile', [AdminController::class, 'profileUpdate']);
-//Route Hooks - Do not delete//
-	Route::get('departments', App\Http\Livewire\Departments::class)->middleware('auth');
+//Route Hooks - Do not delete// 
 
 Route::get('/admin/site_settings', App\Http\Livewire\SiteSettings::class)->middleware('auth');
 Route::get('/admin/users', App\Http\Livewire\Users::class)->middleware('auth');

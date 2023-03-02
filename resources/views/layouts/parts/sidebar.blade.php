@@ -21,9 +21,7 @@
             </li>
 
             <!--Nav Bar Hooks - Do not delete!!-->
-						@can('department-list')<li class="nav-item">
-                            <a href="{{ url('departments') }}" class="nav-link {{request()->is('departments') ? 'active' : ''}}"><i class="nav-icon icon-xs me-2 fa fa-list"></i> {{__('Departments')}}</a>
-                        </li>@endcan
+
 
 
             @if (auth()->user()->can('user-list') || auth()->user()->can('role-list') ||
