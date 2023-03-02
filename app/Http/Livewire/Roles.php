@@ -2,17 +2,19 @@
 
 namespace App\Http\Livewire;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Roles extends Component
 {
     use WithPagination;
     use AuthorizesRequests;
+    use LivewireAlert;
 
     protected $listeners = [
         'confirmed',

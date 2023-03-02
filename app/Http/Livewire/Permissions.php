@@ -5,12 +5,14 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Spatie\Permission\Models\Permission;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Permissions extends Component
 {
     use WithPagination;
     use AuthorizesRequests;
+    use LivewireAlert;
 
 
      protected $listeners = [
@@ -60,7 +62,7 @@ class Permissions extends Component
 
     public function edit($id)
     {
-        
+
         $record = Permission::findOrFail($id);
 
         $this->selected_id = $id;

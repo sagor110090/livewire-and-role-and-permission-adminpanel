@@ -2,17 +2,20 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\SiteSetting;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
-use Livewire\WithFileUploads;
+use App\Models\SiteSetting;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 class SiteSettings extends Component
 {
     use WithPagination;
     use AuthorizesRequests;
     use WithFileUploads;
+    use LivewireAlert;
 
     protected $listeners = [
         'confirmed',
@@ -20,7 +23,7 @@ class SiteSettings extends Component
     ];
 
     protected $paginationTheme = 'bootstrap';
-    public $website_name, $website_logo,$website_favicon;
+    public $website_name, $website_logo, $website_favicon;
 
     public function mount()
     {
@@ -64,5 +67,4 @@ class SiteSettings extends Component
 
         $this->alert('success', 'SiteSetting Successfully updated.');
     }
-
 }

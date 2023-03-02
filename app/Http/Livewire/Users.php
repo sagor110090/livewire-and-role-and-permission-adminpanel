@@ -9,12 +9,14 @@ use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Users extends Component
 {
     use WithPagination;
     use WithFileUploads;
     use AuthorizesRequests;
+    use LivewireAlert;
 
     protected $listeners = [
         'confirmed',
@@ -106,7 +108,6 @@ class Users extends Component
         $this->name = $record->name;
         $this->email = $record->email;
         $this->image = $record->image;
-
     }
 
     public function update()
@@ -139,8 +140,8 @@ class Users extends Component
                 'password' => bcrypt($this->password),
             ]);
             DB::table('model_has_roles')
-            ->where('model_id', $this->selected_id)
-            ->delete();
+                ->where('model_id', $this->selected_id)
+                ->delete();
             $record->assignRole($this->selected_roles);
 
             $this->resetInput();
@@ -181,5 +182,4 @@ class Users extends Component
             $record->delete();
         }
     }
-
 }
